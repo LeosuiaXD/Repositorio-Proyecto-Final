@@ -24,5 +24,7 @@ urlpatterns = [
     path('iniciosesion', usuario_views.login),
     path('logout', usuario_views.logout),
     path('', usuario_views.home),
+    path('inicio',usuario_views.inicio),
+    
 
 ]

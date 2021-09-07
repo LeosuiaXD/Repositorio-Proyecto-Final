@@ -4,7 +4,11 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
 
+
+
 # Create your views here.
+
+
 
 def login(request):
     form = AuthenticationForm()
@@ -17,7 +21,7 @@ def login(request):
            user=authenticate(username=username,password=password)
            if user is not None:
                 do_login(request,user)
-                return redirect('/')
+                return redirect('/inicio')
 
     return render(request, "usuario/login.html", {'form':form})            
 
@@ -39,3 +43,5 @@ def logout(request):
 
 def home(request):
     return render(request, 'usuario/home.html')    
+def inicio(request):    
+    return render(request, 'usuario/sesionjugador.html')  
